@@ -1,0 +1,38 @@
+.section__title {
+    @include font (700, 36px, 1.16, 0.03em);
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 50px;
+}
+.clients {
+    display: flex;
+}
+.clients__item {
+    width: 170px;
+    height: 92px;
+    display: flex;
+    justify-content: center;
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+
+.clients__link {
+    width: 100%;
+    height: 100%;
+    color: #AFB1B8;
+    @extend %align-list;
+    justify-content: center;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);   
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+        border-color: var(--accent-color);
+    }
+}
+.clients__icon {
+    fill: currentColor;
+}
+

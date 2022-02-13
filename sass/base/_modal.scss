@@ -1,0 +1,151 @@
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+.backdrop {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal {
+    width: 528px;
+    min-height: 581px;
+    background-color: var(--bt-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: translate 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 40px;
+}
+.modal__close {
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    @extend %align-list;
+    justify-content: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+}
+.modal__title {
+    @include font (700, 20px, 1.15, 0.03em);
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 12px;
+}
+.form__input {
+    width: 448px;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding-left: 12px;
+    cursor: pointer;
+    outline: none;
+    padding-left: 42px;
+    &:focus {
+        border-color: var(--accent-color);
+    }
+    &:focus + .form__icon {
+        fill: var(--accent-color);
+    }
+}
+
+.form__text {
+    @include font (400, 12px, 1.16, 0.01em);
+    color: var(--lilte-text-color);
+    margin-bottom: 4px;
+    display: block;
+}
+
+.form-text {
+    width: 448px;
+    height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding: 12px;
+    resize: none;
+    cursor: pointer;
+    outline: none;
+    display: block;
+    &:focus {
+        border-color: var(--accent-color);
+    }
+    &::placeholder {
+        @include font (400, 14px, 1.14, 0.01em);
+        color: rgba(117, 117, 117, 0.5);
+}
+}
+
+.form {
+    position: relative;
+    margin-bottom: 10px;
+}
+.form__icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+}
+
+.button__submit {
+    @include button;
+    &:hover,
+    &:focus {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+}
+.modal__button {
+    text-align: center;
+}
+
+.chek__link {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.checkbox {
+    justify-content: center;
+    @extend %align-list;
+    margin-bottom: 30px;
+
+}
+.checkbox-text {
+    @include font (null, 14px, 1.71, 0.03em);  
+    color: var(--lilte-text-color);
+    @extend %align-list;
+    justify-content: center;
+    position: relative;
+}
+.checkmark {
+    appearance: none;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    &:checked + .chek{
+        background-color: var(--accent-color);  
+        background-image: url(../images/icons.svg#icon-galka); 
+        border: none;
+    }
+}
+.checkbox-icon {
+    position: absolute;
+    left: 2px;
+}
+.chek {
+    width: 15px;
+    height: 15px;
+    display: block;
+    border: 2px solid #000000;
+    border-radius: 2px;
+    margin-right: 8px;
+    cursor: pointer;
+}
